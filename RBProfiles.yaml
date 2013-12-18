@@ -1,0 +1,57 @@
+---
+title:      RBProfiles
+name:       rbprofiles
+title_styled:   >
+    RBProfiles
+version:    1.0
+description:    >
+    <p>This module predicts the interaction propensity of a protein-RNA pair and reports the interaction score as well as the discriminative power, which is a measure of the interaction strength with respect to the training sets.</p> 
+
+
+description_short:    >
+    Computes the interaction propensity of a protein-RNA pair
+
+nav_links:
+    -   title:  >
+            RBProfiles Home
+        href:   >
+            http://service.tartaglialab.com/new_submission/rbprofiles   
+    -   title:  >
+            Tutorial
+        href:   >
+            http://service.tartaglialab.com/static_files/shared/tutorial_RBProfiles.html        
+    -   title:  >
+            Group page @ CRG
+        href:   >
+            http://pasteur.crg.es/portal/page/portal/827A462EAB6802B3E04012AC0E01291B
+       
+form_fields:
+    -   name: title
+        description: Submission label (optional)
+        required: No
+        type: text
+    -   name: protein_seq
+        description: Protein sequence (FASTA format 30-1500 aa)
+        required: Yes
+        type: textarea
+        min_length: 30
+        max_length: 1500              
+    -   name: email
+        description: Email address (optional, used for notification)
+        type: email
+        required: No
+
+#examples:
+#    -   reference_id:   750
+#        title:          MRP complex
+#        description:    Interaction between the RPP20 protein and MRP noncoding RNA [<a href="http://www.ncbi.nlm.nih.gov/pubmed/21623348" target="_blank">Bellucci et al., 2011</a>]       
+
+
+algorithm:
+    command:              "RBProfiles.py -output_dir=<output_dir>"
+    processing_timeout:   7200
+    
+# for the processing part
+output:
+    - 
+
