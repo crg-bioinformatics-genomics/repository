@@ -5,21 +5,21 @@ title_styled:   >
     RBPprofiles
 version:    1.0
 description:    >
-    <p>This module predicts the interaction propensity of a protein-RNA pair and reports the interaction score as well as the discriminative power, which is a measure of the interaction strength with respect to the training sets.</p> 
+    <p>RBPprofiles (RNA-binding protein profiles) searches for protein regions which are likely to interact with RNA sequences.</p> 
 
 
 description_short:    >
-    Computes the interaction propensity of a protein-RNA pair
+    Computes protein propensity of binding RNA
 
 nav_links:
     -   title:  >
             RBProfiles Home
         href:   >
-            http://service.tartaglialab.com/new_submission/rbprofiles   
+            http://service.tartaglialab.com/new_submission/rbpprofiles   
     -   title:  >
             Tutorial
         href:   >
-            http://service.tartaglialab.com/static_files/shared/tutorial_RBProfiles.html        
+            http://service.tartaglialab.com/static_files/shared/tutorial_RBPprofiles.html        
     -   title:  >
             Group page @ CRG
         href:   >
