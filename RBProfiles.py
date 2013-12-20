@@ -20,11 +20,11 @@ def copyfolder(src, dst):
         else: raise
         
 # read the task definition yaml file
-with open(os.path.join(SCRIPT_PATH, "RBProfiles.yaml"), "r") as task_f:
+with open(os.path.join(SCRIPT_PATH, "rbpprofiles.yaml"), "r") as task_f:
 	task_definition = yaml.load(task_f)
 
 parser = argparse.ArgumentParser(
-   description='Launches RBProfiles with properly parset parameters')
+   description='Launches RBPprofiles with properly parset parameters')
 
 # parser.add_argument(
 #    '-fileA', type=str, default=["none"], nargs=1, help='Dataset A')

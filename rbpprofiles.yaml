@@ -1,8 +1,8 @@
 ---
-title:      RBProfiles
-name:       rbprofiles
+title:      RBPprofiles
+name:       rbpprofiles
 title_styled:   >
-    RBProfiles
+    RBPprofiles
 version:    1.0
 description:    >
     <p>This module predicts the interaction propensity of a protein-RNA pair and reports the interaction score as well as the discriminative power, which is a measure of the interaction strength with respect to the training sets.</p> 
