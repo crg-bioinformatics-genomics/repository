@@ -31,10 +31,10 @@ form_fields:
         required: No
         type: text
     -   name: protein_seq
-        description: Protein sequence (FASTA format 30-1500 aa)
+        description: Protein sequence (FASTA format 50-1500 aa)
         required: Yes
         type: textarea
-        min_length: 30
+        min_length: 50
         max_length: 1500              
     -   name: email
         description: Email address (optional, used for notification)
