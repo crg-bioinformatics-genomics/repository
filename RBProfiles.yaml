@@ -34,7 +34,6 @@ form_fields:
         description: Protein sequence (FASTA format 30-1500 aa)
         required: Yes
         type: textarea
-        max_sequences:  1
         min_length: 30
         max_length: 1500              
     -   name: email
