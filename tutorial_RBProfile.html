@@ -1,0 +1,153 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+</head>
+
+<body>
+<div id="topbar">
+<div id="home_panel">
+<p><a href="UrlBlockedError.aspx" target="_blank">Portal Home</a></p> </div>
+<div id="title_server">
+<h1>RBProfile Tutorial</h1> </div>
+<div id="navbar_server">
+<h3>[ <a href="UrlBlockedError.aspx" target="_blank">SeAMotE Home</a> - <a href="redir.aspx?C=HlRBp_bAGUqgGQo-6JHyTk2LD8b50NBI5c1ZqkSJTP3U4-FQiRc4jNhcDFv_pYWCkYq2iKpLfaQ.&amp;URL=http%3a%2f%2fpasteur.crg.es%2fportal%2fpage%2fportal%2fInternet%2f02_Research%2f01_Programmes%2f01_Bioinformatics_Genomics%2fGene_Function_and_Evolution" target="_blank">
+Tartaglia Lab</a> ]</h3> </div>
+</div>
+<div id="welcome_docs">
+<div id="left_column"><img> </div>
+<div id="right_column"><br>
+<dl><dt><a href="#1">Submission form</a> </dt><dt><a href="#2">Interpreting the output</a> </dt><dt><a href="#3">Performances</a> </dt></dl>
+<br>
+<br>
+<h2>RBProfile Tutorial</h2>
+<br>
+<a name="1">
+<p>RBProfile (RNA-binding protein profiles) searches for protein regions which are likely to interact with RNA sequences.</p>
+</a><br>
+<h4>Submission form</h4>
+<br>
+<div id="docs_image2"><img> </div>
+<p>RBProfile takes as input a protein sequence in FASTA format.</p>
+<p>The server automatically assignes a reference number to each submission and the user can provide an email address (optional) to receive a notification when the job is completed. </p>
+<br>
+<div id="docs_image2"><img> </div>
+<p>After the submission the algorithm processes the protein sequence and calculates a number of profiles using preselected RNA-binding domains and associated "scales". (They can not be selected by the user.) A "scale" is a set of values assigned to the amino acids and describing their physical-chemical properties. For example, a "scale: can be the hydrophobicity scale (Kyte & Doolittle, J. Mol. Biol. 1982, 157:105-132), the "Turn propensity scale for transmembrane helices" (Monne et al., J. Mol. Biol. 1999, 288:141-145) or the "Nucleic Acid Binding - mRNAinteractome" scale ( Castello et al., Cell 2011, 149:1393-1406). </p>
+<p>
+During all the submission process, the submission status will be displayed at the end of the page.</p>
+<br>
+<a name="2">
+<h4>Interpretation of the output</h4>
+</a><br>
+<p>
+After the profile calculation the input specific profile is compared to the negative training dataset and a final score is assigned. The score ranged from zero to one and informs about the significance of the obtained result. A score > 0.62 means a significant binding region has been found in the sequence. 
+</p>
+
+<br>
+<table border="0" cellpadding="0" cellspacing="0" style="width:500px; height:100px">
+<tbody>
+<tr>
+<th>IUPAC nucleotide code</th>
+<th>Base</th>
+</tr>
+<tr>
+<td>A</td>
+<td>Adenine</td>
+</tr>
+<tr>
+<td>C</td>
+<td>Cytosine</td>
+</tr>
+<tr>
+<td>G</td>
+<td>Guanine</td>
+</tr>
+<tr>
+<td>T (or U)</td>
+<td>Thymine (or Uracil)</td>
+</tr>
+<tr>
+<td>R</td>
+<td>A or G</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>C or T</td>
+</tr>
+<tr>
+<td>S</td>
+<td>G or C</td>
+</tr>
+<tr>
+<td>W</td>
+<td>A or T</td>
+</tr>
+<tr>
+<td>K</td>
+<td>G or T</td>
+</tr>
+<tr>
+<td>M</td>
+<td>A or C</td>
+</tr>
+<tr>
+<td>B</td>
+<td>C or G or T</td>
+</tr>
+<tr>
+<td>D</td>
+<td>A or G or T</td>
+</tr>
+<tr>
+<td>H</td>
+<td>A or C or T</td>
+</tr>
+<tr>
+<td>V</td>
+<td>A or C or G</td>
+</tr>
+<tr>
+<td>N</td>
+<td>any base</td>
+</tr>
+</tbody>
+</table>
+<p>Along with the score a color-plot provides information about the
+</p>
+
+<a name="3">
+<h4>Performances</h4>
+</a>
+<p>We benchmarked the algorithm on <i>in vivo</i> CLIP-seq data assembled from literature (see references below) and reported the performances with respect to DREME (Bailey TL. Bioinformatics. 2011), a very well established tool for discriminative motif discovery.
+</p>
+<p>SeAMotE outperforms DREME in discovering motifs that achieve both higher discrimination and higher statistical significance.
+</p>
+<br>
+<div id="docs_image2"><img> </div>
+<br>
+<p>The illustrative example of SeAMotE and DREME performances of PUM2 PAR-CLIP dataset (Hafner et al. J Vis Exp. 2010) is provided.
+</p>
+<br>
+<div id="docs_image2"><img> </div>
+<br>
+<span style="color:grey60"><i>CLIP-seq data references</i></span> <br>
+<p>FUS &#8211; Hoell, J. I. et al. Nature Struct. Mol. Biol. 18, 1428&#8211;1431 (2011). <br>
+ELAVL1_MNASE &#8211; Kishore, S. et al. Nat Methods 8, 559&#8208;564 (2011).<br>
+TAF15 &#8211; Hoell, J. I. et al. Nature Struct. Mol. Biol. 18, 1428&#8211;1431 (2011).<br>
+ELAVL1_Lebedeva &#8211;&nbsp;Lebedeva, S. et al. Mol Cell 43, 340&#8208;352 (2011).<br>
+QKI; PUM2; IGF2BP1-3; ELAVL1_Hafner &#8211; Hafner, M. et al. J Vis Exp (2010).<br>
+ELAVL1_ Mukharjee &#8211; Mukherjee, N. et al. Mol Cell 43, 327&#8208;339 (2011).<br>
+SFSR1 &#8211; Sanford, J.R. et al. Genome Res 19, 381&#8208;394 (2009).<br>
+TIA1; TIAL1 &#8211; Wang, Z. et al. PLoS Biol 8, e1000530 (2010).<br>
+TARDBP_iCLIP &#8211; Tollervey, J.R. et al. Nat Neurosci 14, 452&#8208;458 (2011).<br>
+</p>
+<br>
+<br>
+</div>
+</div>
+<div id="footer_docs" align="center">
+<hr>
+<p>&copy; 2014 - <a href="UrlBlockedError.aspx" target="_blank">Gene Function and Evolution</a> -
+<a href="UrlBlockedError.aspx" target="_blank">Center for Genomic Regulation (CRG)</a></p>
+</div>
+</body>
+</html>
