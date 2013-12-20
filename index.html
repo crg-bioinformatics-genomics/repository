@@ -49,15 +49,13 @@
 		<p><a href="http://service.tartaglialab.com/">Portal Home</a></p>
 	</div>
 	<div id="title_server">
-		<h1><i>cat</i>RAPID graphic</h1>
+		<h1>RBProfiles</h1>
 	</div>
 	<div id="navbar_server">
 				<h3>[ 
                             <a target="" href="http://service.tartaglialab.com/page/catrapid_group"><i>cat</i>RAPID home</a>
                              - 
-                            <a target="" href="http://service.tartaglialab.com/static_files/shared/documentation.html#3">Documentation</a>
-                             - 
-                            <a target="" href="http://service.tartaglialab.com/static_files/shared/tutorial.html">Tutorial</a>
+                            <a target="" href="http://service.tartaglialab.com/static_files/shared/tutorial_RBProfiles.html">Tutorial</a>
                              - 
                             <a target="" href="http://pasteur.crg.es/portal/page/portal/827A462EAB6802B3E04012AC0E01291B">Group page @ CRG</a>	                    
                  ]</h3>
@@ -70,20 +68,16 @@
         <h4>Information about the JOB:</h4>
         <p>ID: {{randoms}}<br />
         User label: {{title}}<br />
-        <a href="protein.fasta">Protein sequence</a><br />
-        <a href="rna.fasta">Transcript sequence</a><br />
         Generated: {{generated}}<br />
         </p>
         </span>
         <br />
         <div>            
-             <div style="float:left;width:940px;">          
-                <h4>Interaction Heatmap (<a href="Interaction_heatmap.{{randoms}}.{{title}}.png">png</a>) </h4>
-                <image src="Interaction_heatmap.{{randoms}}.{{title}}.png" /> 
+             <div style="float:left;width:940px;">            
+                <image src="image.png" /> 
+                <h4><a href="image.png">Download png</a></h4>
             </div>
-			<h2>  The colors in the heatmap indicate the interaction score (ranging from -3 to +3) of the individual amino acid and nucleotide pairs. The total sum represents the overall interaction score. <br /><br />
-			For a more accurate characterization of the binding regions, please, use the <a target="" href="http://service.tartaglialab.com/new_submission/catrapid_fragments">fragment algorithm</a>. We recommend the use of the fragment algorithm for transcripts longer than 600nt.
-				</h2>
+			<h2>  * Reference physico-chemical scale: {{rbp_result}}</h2>
         </div>    
         <div style="clear:both;">
     	</div>

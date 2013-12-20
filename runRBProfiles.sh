@@ -1,6 +1,6 @@
 #!/bin/bash
-# bash RBProfiles.sh <random_number> <title> <proteinFile>
-echo $1 $2 $3
+# bash RBProfiles.sh <random_number> <email> <title> <proteinFile>
+echo $1 $2 $3 $4
 
 set -e
 #set -o pipeline
@@ -8,8 +8,8 @@ set -e
 cp -r template tmp/$1
 cd   tmp/$1  
 
-	python ...
+	cp "$4" data/inseq.fasta
 
-	cp ./matrix.png  ./outputs/Heatmap.$1.$3.png
+	python RBPprofiler.py
 
 cd ..
