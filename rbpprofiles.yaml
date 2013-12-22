@@ -5,7 +5,7 @@ title_styled:   >
     RBPprofiles
 version:    1.0
 description:    >
-    <p>RBPprofiles (RNA-binding protein profiles) searches for protein regions which are likely to interact with RNA sequences.</p> 
+    <p>RBPprofiles (RNA-binding protein profiles) searches for protein regions which are likely to interact with RNA sequences.</p>
 
 
 description_short:    >
@@ -15,11 +15,11 @@ nav_links:
     -   title:  >
             RBProfiles Home
         href:   >
-            http://service.tartaglialab.com/new_submission/rbpprofiles   
+            http://service.tartaglialab.com/new_submission/rbpprofiles
     -   title:  >
             Tutorial
         href:   >
-            http://service.tartaglialab.com/static_files/shared/tutorial_RBPprofiles.html        
+            http://service.tartaglialab.com/static_files/shared/tutorial_RBPprofiles.html
     -   title:  >
             Group page @ CRG
         href:   >
@@ -35,7 +35,7 @@ form_fields:
         required: Yes
         type: textarea
         min_length: 50
-        max_length: 1500              
+        max_length: 1500
     -   name: email
         description: Email address (optional, used for notification)
         type: email
@@ -43,12 +43,11 @@ form_fields:
 
 examples:
     -   reference_id:   18592
-        title:          IFRD1 (interferon-related developmental regulator I)
-#        description:    Interaction between the RPP20 protein and MRP noncoding RNA [<a href="http://www.ncbi.nlm.nih.gov/pubmed/21623348" target="_blank">Bellucci et al., 2011</a>]       
+        title:          IFRD1 protein
+        description:    interferon-related developmental regulator I
     -   reference_id:   18593
-        title:          1ARB (Achromobacter lyticus protease I)
-#        description:    Interaction between the RPP20 protein and MRP noncoding RNA [<a href="http://www.ncbi.nlm.nih.gov/pubmed/21623348" target="_blank">Bellucci et al., 2011</a>]       
-
+        title:          1ARB protein
+        description:    Achromobacter lyticus protease I
 
 algorithm:
     command:              "RBProfiles.py -output_dir=<output_dir>"
