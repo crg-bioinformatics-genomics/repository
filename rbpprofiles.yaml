@@ -41,9 +41,12 @@ form_fields:
         type: email
         required: No
 
-#examples:
-#    -   reference_id:   750
-#        title:          MRP complex
+examples:
+    -   reference_id:   18592
+        title:          IFRD1 (interferon-related developmental regulator I)
+#        description:    Interaction between the RPP20 protein and MRP noncoding RNA [<a href="http://www.ncbi.nlm.nih.gov/pubmed/21623348" target="_blank">Bellucci et al., 2011</a>]       
+    -   reference_id:   18593
+        title:          1ARB (Achromobacter lyticus protease I)
 #        description:    Interaction between the RPP20 protein and MRP noncoding RNA [<a href="http://www.ncbi.nlm.nih.gov/pubmed/21623348" target="_blank">Bellucci et al., 2011</a>]       
 
 
