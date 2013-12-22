@@ -227,8 +227,8 @@ for RBP in posRBP:
 outstring=""
 for a in correlationField:
 	outstring+=str(a)+" "
-for a in range(len(outstring.split()),protlen):
-	outstring+=str(0)+" "
+#for a in range(len(outstring.split()),protlen):
+#	outstring+=str(0)+" "
 
 outfile=open("./outputs/RBP.out","w")
 outfile.write(outstring+"\n")
@@ -240,7 +240,7 @@ outfile.write("#score: "+str(score)+"\n")
 outfile.close()
 
 log.write("create Image...")
-subprocess.call("cat createImage.R | R --slave --vanilla --args "+str(score)+" "+newmotif,shell=True)
+subprocess.call("cat createImage.R | R --slave --vanilla --args "+str(score)+" "+newmotif+" "+str(RRMlen),shell=True)
 		
 log.close()
 

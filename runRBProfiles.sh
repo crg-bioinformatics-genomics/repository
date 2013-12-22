@@ -6,10 +6,10 @@ set -e
 #set -o pipeline
 
 cp -r template tmp/$1
-cd   tmp/$1  
+cd   tmp/$1
 
 	cp "$4" data/inseq.fasta
 
-	python RBPprofiler.py
+	python RBPprofiler.py 2&>log
 
 cd ..
