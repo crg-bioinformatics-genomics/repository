@@ -110,7 +110,8 @@ if p.returncode == 0:
 
 	with open(os.path.join(OUTPUT_PATH,"RBP.out"), "r") as rbpout:
 		rbp_lines = rbpout.readlines()
-		rbp_result = rbp_lines[2].replace("#scale:", "")
+		rbp_pfam  = rbp_lines[1].replace("#domain: ", "")
+		rbp_scale = rbp_lines[2].replace("#scale:", "")
 	
 	# read the template file into a variable
 	with open(os.path.join(SCRIPT_PATH, "index.html"), "r") as template_file:
@@ -126,7 +127,8 @@ if p.returncode == 0:
 	   {
 		   "title": title,
 		   "proteinFile" : protFile,
-		   "RBPline" : rbp_result,
+		   "RBPpfam" : rbp_pfam,
+		   "RBPscale" : rbp_scale,
 		   "randoms" : random_number,
 		   "generated" : str(datetime.datetime.now()),
 	   }
