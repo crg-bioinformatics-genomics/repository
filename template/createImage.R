@@ -47,7 +47,7 @@ dev.off()
 
 # NORMAL image
 # png("./outputs/image.png",width=1920,height=480,pointsize=20)
-png("./outputs/image.png",width=750,height=160)
+png("./outputs/image.png",width=900,height=240)
 
 #newdata=rbind(zerovector,data)
 #bla=rbind(zerovector,halfdata)
