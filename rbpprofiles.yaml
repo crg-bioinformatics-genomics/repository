@@ -44,7 +44,7 @@ form_fields:
 examples:
     -   reference_id:   18592
         title:          IFRD1 protein
-        description:    interferon-related developmental regulator I (positive case from <a href="http://www.ncbi.nlm.nih.gov/pubmed/22658674" target="_blank">Cell. 2012 Jun 8;149(6):1393-406</a>)
+        description:    interferon-related developmental regulator I (positive case from <a href="http://www.ncbi.nlm.nih.gov/pubmed/22658674" target="_blank">Cell. 2012 Jun 8; 149(6):1393-406</a>)
     -   reference_id:   18593
         title:          1ARB protein
         description:    Achromobacter lyticus protease I (negative case from <a href="http://www.ncbi.nlm.nih.gov/pubmed/18629075" target="_blank">J. Mol. Biol. (2003) 326, 1065–1079</a>)
