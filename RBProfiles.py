@@ -60,13 +60,12 @@ Ppat = re.compile('>.*?\n[ARNDCQEGHILKMFPSTWYV]+', re.IGNORECASE)
 if Ppat.match(args.FORMprotein_seq[0]) == None:
 	args.FORMprotein_seq[0] = ">input_protein\n"+args.FORMprotein_seq[0]
 protSeq = []
-for record in SeqIO.parse(StringIO.StringIO(args.FORMprotein_seq[0]), "fasta"):
-	protSeq.append(record)
-
 protFile = os.path.join(OUTPUT_PATH,"protein.fasta")
 output_handle = open(protFile, "w")
+for record in SeqIO.parse(StringIO.StringIO(args.FORMprotein_seq[0]), "fasta"):
+	protSeq.append(record)
+	output_handle.write(">input_protein\n"+record.seq)
 # SeqIO.write(protSeq, output_handle, "fasta")
-output_handle.write(">input_protein\n"+record.seq)
 output_handle.close()
 
 #import IPython
