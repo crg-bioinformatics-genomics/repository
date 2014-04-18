@@ -1,0 +1,80 @@
+0 Aggregation - Pawar, J. Mol. Biol. 2005, 350:379–392
+1 Aggregation - Conchillo-Sole, BMC Bioinformatics 2007, 8:65
+2 Aggregation low - Tartaglia, J Mol Biol 2008, 380(2):425-36
+3 Aggregation med - Tartaglia, J Mol Biol 2008, 380(2):425-36
+4 Aggregation high - Tartaglia, J Mol Biol 2008, 380(2):425-36
+5 Aggregation low - Ferdandez-Escamilla, Nat. Biotechnol. 2004, 22(10):1302-6
+6 Aggregation med - Ferdandez-Escamilla, Nat. Biotechnol. 2004, 22(10):1302-6
+7 Aggregation high - Ferdandez-Escamilla, Nat. Biotechnol. 2004, 22(10):1302-6
+8 Aggregation - Tartaglia, J. Mol. Biol. 2010, 402:919–928
+9 Aggregation - Tartaglia, Protein Science 2005, 14:2735-2740
+10 Alpha-helix, Deleage-Roux, Protein Engineering 1987, 1:289-294
+11 Normalized frequency of alpha-helix, Chou-Fasman, Adv. Enzym. 1978, 47:45-148
+12 Normalized frequency of alpha-helix, with weights, Levitt, Biochemistry 1978, 17:4277-4285
+13 Normalized frequency of alpha-helix, unweighted Levitt, Biochemistry 1978, 17:4277-4285
+14 Normalized frequency of alpha-helix, Burgess et al, Isr.J.Chem. 1974, 12:239-286
+15 Normalized frequency of middle helix, Crawford et al., Proc. Natl. Acad. Sci. USA 1973, 70:538-542
+16 Average relative probability of helix, Kanehisa-Tsong, Biopolymers 1980, 19:1617-1628
+17 Normalized frequency of alpha-helix in all-alpha class, Palau et al., Int. J. Peptide Protein Res. 1981, 19:394-401
+18 Relative frequency in alpha-helix, Prabhakaran, Biochem. J. 1990, 269:691-696
+19 Information measure for alpha-helix, Robson-Suzuki, J. Mol. Biol. 1976, 107:327-356
+20 Normalized frequency of beta-sheet, Chou-Fasman, Adv. Enzymol. 1978, 47:45-148
+21 Normalized frequency of beta-sheet, Crawford et al, Proc. Natl. Acad. Sci. USA 1973, 70:538-542
+22 Average relative probability of beta-sheet, Kanehisa-Tsong, Biopolymers 1980, 19:1617-1628
+23 Average relative probability of inner beta-sheet, Kanehisa-Tsong, Biopolymers 1980, 19:1617-1628
+24 Normalized frequency of beta-sheet, with weights, Levitt, Biochemistry 1978, 17:4277-4285
+25 Normalized frequency of beta-sheet, unweighted, Levitt, Biochemistry 1978, 17:4277-4285
+26 Normalized frequency of beta-sheet in all-beta class, Palau et al., Int. J. Peptide Protein Res. 1981, 19:394-401
+27 Relative frequency in beta-sheet, Prabhakaran, Biochem. J. 1990, 269:691-696
+28 Information measure for pleated-sheet, Robson-Suzuki, J. Mol. Biol. 1976, 107:327-356
+29 Beta-sheet, Deleage-Roux, Protein Engineering 1987, 1:289-294
+30 Membrane-buried preference parameters, Argos et al., Eur. J. Biochem. 1982, 128:565-575
+31 Average volume of buried residue, Chothia, Nature 1975, 254:304-308
+32 Proportion of residues 95% buried, Chothia, J. Mol. Biol. 1976, 105:1-14
+33 Proportion of residues 100% buried, Chothia, J. Mol. Biol. 1976, 105:1-14
+34 Percentage of buried residues, Janin et al., J. Mol. Biol. 1978, 125:357-386
+35 Ratio of buried and accessible molar fractions, Janin, Nature 1979, 277:491-492
+36 Energy transfer from out to in(95%buried), Radzicka-Wolfenden, Biochemistry 1988, 27:1664-1670
+37 Mean area buried on transfer, Rose et al., Science 1985, 229:834-838
+38 Propensity to be buried inside, Wertz-Scheraga, Macromolecules 1978, 11:9-15
+39 Mean volumes of residues buried in protein interiors, Harpaz et al., Structure 1994, 2:641-649
+40 The Chou-Fasman parameter of the coil conformation, Charton-Charton, J. Theor. Biol. 1983, 111:447-450
+41 Normalized relative frequency of coil, Isogai et al., Biopolymers 1980, 19:1183-1210
+42 Normalized frequency of coil, Nagano, J. Mol. Biol. 1973, 75:401-420
+43 Normalized frequency of coil, Tanaka-Scheraga, Macromolecules 1977, 10:9-20
+44 TOP-IDB, Dunker AK, Protein Pept Lett. 2008; 15(9): 956–963
+45 B-Value / Dunker AK, Protein Pept Lett. 2008; 15(9): 956–963
+46 DisProt, Dunker AK, Protein Pept Lett. 2008; 15(9): 956–963
+47 Average flexibility indices, Bhaskaran-Ponnuswamy, Int. J. Peptide Protein Res. 1988, 32:241-255
+48 UnfoldOverFold, Dunker AK, Protein Pept Lett. 2008; 15(9): 956–963
+49 Coil, Deleage-Roux, Protein Engineering 1987, 1:289-294
+50 Hydrophobicity, Eisenberg et al, J. Mol. Biol. 1984, 179:125-142
+51 Hydrophobicity, Kyte & Doolittle, J. Mol. Biol. 1982, 157:105-132
+52 Hydrophobicity, Sweet et al., J. Mol. Biol. 1983, 171:479-488
+53 Hydrophobicity, Roseman, J. Mol. Biol. 1988, 200:513-522
+54 Hydrophobicity, Bull & Breese, Arch. Biochem. Biophys. 1974, 161:665-670
+55 Hydrophobicity, Janin, Nature 1979, 277:491-492
+56 Hydrophobicity, Abraham & Leo, Proteins: Structure; Function and Genetics 1987, 2:130-152
+57 Hydrophobicity, Black, Anal. Biochem. 1991, 193:72-82
+58 Hydrophobicity, Rao & Argos, Biochim. Biophys. Acta 1986, 869:197-214
+59 Hydrophobicity, Fauchere et al., Eur. J. Med. Chem. 1983, 18:369-375
+60 Membrane-buried preference parameters, Argos et al., Eur. J. Biochem. 1982, 128:565-575
+61 AA composition of membrane proteins, Nakashima et al., Proteins 1990, 8:173-178
+62 Normalized composition of membrane proteins, Nakashima et al., Proteins 1990, 8:173-178
+63 Transmembrane regions of non-mt-proteins, Nakashima et al., Proteins 1990, 8:173-178
+64 Transmembrane regions of mt-proteins, Nakashima et al., Proteins 1990, 8:173-178
+65 Turn propensity scale for transmembrane helices, Monne et al., J. Mol. Biol. 1999, 288:141-145
+66 Averaged turn propensities in a transmembrane helix, Monne et al., J. Mol. Biol. 1999, 293:807-814
+67 Composition of amino acids in membrane proteins (percent), Cedano et al., J. Mol. Biol. 1997, 266:594-600
+68 Knowledge-based membrane-propensity scale from 1D_Helix in MPtopo databases, Punta-Maritan, Proteins 2003, 50:114-121
+69 Knowledge-based membrane-propensity scale from 3D_Helix in MPtopo databases, Punta-Maritan, Proteins 2003, 50:114-121
+70 Nucleic Acid Binding - _interface_close-1, Terribilini et al., RNA 2006, 12:1450-1462
+71 Nucleic Acid Binding - classicalRBD, Castello et al., Cell 2011, 149:1393-1406
+72 Nucleic Acid Binding - HB, Nucleic Acids Res. 2011, 39:D277–D282
+73 Nucleic Acid Binding - HOH, Nucleic Acids Res. 2011, 39:D277–D282
+74 Nucleic Acid Binding - interface, Nucleic Acids Res. 2011, 39:D277–D282
+75 Nucleic Acid Binding - interface_center, Terribilini et al., RNA 2006, 12:1450-1462
+76 Nucleic Acid Binding - interface_close+1, Terribilini et al., RNA 2006, 12:1450-1462
+77 Nucleic Acid Binding - mRNAinteractome, Castello et al., Cell 2011, 149:1393-1406
+78 Nucleic Acid Binding - nonclassicalRBD, Castello et al., Cell 2011, 149:1393-1406
+79 Nucleic Acid Binding - unknownRBD, Castello et al., Cell 2011, 149:1393-1406

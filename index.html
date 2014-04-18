@@ -53,8 +53,8 @@
 	</div>
 	<div id="navbar_server">
 				<h3>[ 
-                            <a target="" href="http://service.tartaglialab.com/new_submission/rbpprofiles">RBPprofiles home</a>
-                             - 
+                            <a target="" href="http://service.tartaglialab.com/new_submission/rbpprofiles_test">RBPprofiles home</a>
+                             -
                             <a target="" href="http://service.tartaglialab.com/static_files/shared/tutorial_RBPprofiles.html">Tutorial</a>
                              - 
                             <a target="" href="http://pasteur.crg.es/portal/page/portal/827A462EAB6802B3E04012AC0E01291B">Group page @ CRG</a>	                    
@@ -73,15 +73,78 @@
         </p>
         </span>
         <br />
+	<p>Protein sequence and putative binding-sites  </p>
         <div>            
              <div style="float:left;width:940px;">            
-                <image src="image.png" /></br></br>
-                <h3><a href="HD_image.png">Download png</a></h3>
+              <!--   <image src="image.png" /></br></br> -->
+              <!--   <h3><a href="HD_image.png">Download png</a></h3> -->
+		
+              <image src="profiles.jpeg" /></br></br>
+              <h3><a href="profiles.jpeg">Download jpeg</a></h3>
             </div>
             </br>
-			<p><small>* Reference physico-chemical scale: {{RBPscale}}</br>&nbsp;&nbsp;Reference Pfam: <a href="http://pfam.sanger.ac.uk/family/{{RBPpfam}}">{{RBPpfam}}</a></small></p>
+		<!--	<p><small>* Reference physico-chemical scale: {{RBPscale}}</br>&nbsp;&nbsp;Reference Pfam: <a href="http://pfam.sanger.ac.uk/family/{{RBPpfam}}">{{RBPpfam}}</a></small></p>
 <!-- 			RBPpfam  -->
-        </div>    
+        </div>  
+
+	
+
+
+	<div style="float:left;width:940px;">          
+	 
+	<!-- 
+		        <h3>Statistics
+		            (<a href="statistics.{{randoms}}.{{title}}.txt">TXT</a> - <a href="statistics.{{randoms}}.{{title}}.png">PNG</a>):
+		        </h3>
+	 -->
+	 
+		        <h3>
+		            <!-- (<a href="best.prot.rna.txt">Download the text file of the results</a>): -->
+		            (<a href="interactions.{{randoms}}.{{title}}.txt">Download the text file of the results</a>):
+		        </h3>
+		    	<br>
+	 				<table cellpadding="0" cellspacing="0" border="0" id="table" class="sortable"> 
+	 					<thead><tr>
+								
+								<th><h3>Protein region</h3></th>
+								<th><h3>Reference Pfam</h3></th>
+								<th><h3>Correlation</h3></th>
+								<th><h3>Reference physico-chemical scale</h3></th>							
+								<th><h3>detailed plot</h3></th>
+	<!--						<th><h3>Interaction Strength</h3></th>
+								<th class="nosort"><h3>Download</h3></th>
+	 -->
+							</tr>
+						</thead>
+						<script type="text/javascript">
+							var ajaxRq = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Msxml2.XMLHTTP");
+							ajaxRq.open("GET", "testtable.html", false);
+							ajaxRq.send(null);
+							document.write(ajaxRq.responseText);
+						</script>
+					</table> 
+					<script type="text/javascript" src="script.js"></script>
+					<script type="text/javascript">
+		        	$().ready(function() {
+						    sorter = new TINY.table.sorter("sorter");
+							sorter.head = "head";
+							sorter.asc = "asc";
+							sorter.desc = "desc";
+							sorter.even = "evenrow";
+							sorter.odd = "oddrow";
+							sorter.evensel = "evenselected";
+							sorter.oddsel = "oddselected";
+							sorter.paginate = true;
+							sorter.currentid = "currentpage";
+							sorter.limitid = "pagelimit";
+							sorter.init("table",0);
+		        	})  				</script>            
+		    </div>
+
+
+
+
+  
         <div style="clear:both;">
     	</div>
         

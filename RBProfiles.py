@@ -20,7 +20,7 @@ def copyfolder(src, dst):
         else: raise
         
 # read the task definition yaml file
-with open(os.path.join(SCRIPT_PATH, "rbpprofiles.yaml"), "r") as task_f:
+with open(os.path.join(SCRIPT_PATH, "rbpprofiles_test.yaml"), "r") as task_f:
 	task_definition = yaml.load(task_f)
 
 parser = argparse.ArgumentParser(
@@ -107,32 +107,61 @@ if p.returncode == 0:
 	from django.template import Template
 	
 	settings.configure(TEMPLATE_DIRS=(os.path.join(SCRIPT_PATH,'./')), DEBUG=True, TEMPLATE_DEBUG=True)
-
-	with open(os.path.join(OUTPUT_PATH,"RBP.out"), "r") as rbpout:
-		rbp_lines = rbpout.readlines()
-		rbp_pfam  = rbp_lines[1].replace("#domain: ", "")
-		rbp_scale = rbp_lines[2].replace("#scale:", "")
-	
-	# read the template file into a variable
-	with open(os.path.join(SCRIPT_PATH, "index.html"), "r") as template_file:
-	   template_string = "".join(template_file.readlines())
 	
 	import datetime
 	
-	# create template from the string
+	#with open(os.path.join(OUTPUT_PATH,"noPass.txt"), "r") as rbpout:
+#		rbp_lines = rbpout.readlines()
+#		rbp_pfam  = rbp_lines[0].split()[0]
+	#
+	## read the template file into a variable
+	
+	
+	try:
+		#o=open(os.path.join(OUTPUT_PATH,"noPass.txt"),"r")
+			
+		with open(os.path.join(OUTPUT_PATH,"noPass.txt"), "r") as rbpout:
+			rbp_lines = rbpout.readlines()
+			rbp_pfam  = rbp_lines[0].split()[0]
+
+		with open(os.path.join(SCRIPT_PATH, "indexNoPass.html"), "r") as template_file:
+		   template_string = "".join(template_file.readlines())
+		c = Context({"title": title,"proteinFile" : protFile,"RBPpfam" : rbp_pfam,"randoms" : random_number,"generated" : str(datetime.datetime.now()),})
+	except:
+		
+		try:
+			with open(os.path.join(OUTPUT_PATH,"noDomainFound.txt"), "r") as rbpout:
+				rbp_lines = rbpout.readlines()
+				rbp_pfam  = rbp_lines[0].split()[0]
+
+			with open(os.path.join(SCRIPT_PATH, "indexNoPass.html"), "r") as template_file:
+			   template_string = "".join(template_file.readlines())
+			c = Context({"title": title,"proteinFile" : protFile,"RBPpfam" : rbp_pfam,"randoms" : random_number,"generated" : str(datetime.datetime.now()),})
+
+		except:
+
+			with open(os.path.join(SCRIPT_PATH, "index.html"), "r") as template_file:
+			   template_string = "".join(template_file.readlines())
+			c = Context({"title": title,"proteinFile" : protFile,"randoms" : random_number,"generated" : str(datetime.datetime.now()),})
+	
+
 	t = Template(template_string)
+#	import datetime
+	
+	# create template from the string
+	
 	
 	# context contains variables to be replaced
-	c = Context(
-	   {
-		   "title": title,
-		   "proteinFile" : protFile,
-		   "RBPpfam" : rbp_pfam,
-		   "RBPscale" : rbp_scale,
-		   "randoms" : random_number,
-		   "generated" : str(datetime.datetime.now()),
-	   }
-	)
+	#c = Context(
+	 #  {
+	#	   "title": title,
+	#	   "proteinFile" : protFile,
+	#	#   "RBPpfam" : rbp_pfam,
+	#	 #  "RBPscale" : rbp_scale,
+	#	   "randoms" : random_number,
+	#	   "generated" : str(datetime.datetime.now()),
+	 #  }
+	#)
 	
 	# and this bit outputs it all into index.html
 	with open(os.path.join(OUTPUT_PATH, "index.html"), "w") as output: 

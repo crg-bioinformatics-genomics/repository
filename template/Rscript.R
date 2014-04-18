@@ -1,56 +1,40 @@
 ##creates file for each entry
 
-data=read.table("./outputs/profileForProtein.txt")
-bestScales=unique(read.table("./data/selectedScales.txt",sep = "+"))
+data=read.table("outputs/errorCorrRBP_RRM.Final")
 
+RBPid=unique(as.character(data$V1))
 
-file.remove("./outputs/testfilefinal")
-file.remove("./outputs/RBProfile.final")
+allRRM=as.character(unique(data$V2))
 
-##loop over bestscales
-for (ll in seq(1,dim(bestScales)[1]))
+runvar=1
+for (RRMid in allRRM)
 {
-	line=bestScales[ll,]
-	#get motit,get scale
-	motif=as.character(line$V1)
-	scale=line$V2
-	#print(motif)
-	#print(scale)
-######select pos########################	
-	pdom=data[which(data$V2==motif),]
-	pscale=pdom[which(pdom$V3==scale),]
-	pfinale=pscale[,4:24]
-######select negatives########################
-#	nname=paste("/mnt/large/carmen/Profile/Lysate_otherFormat/Lysate",scale,".neg",sep="")
-	nname=paste("../Gutfreund_accum/Gutfreund",scale,".neg",sep="")
-	#nname=paste("/mnt/large/carmen/Profile/Pos_otherFormat/PMSliste",scale,".pos",sep="")
-	neg=read.table(nname)
-	ndom=neg[which(neg$V2==motif),]
-	nscale=ndom[which(ndom$V3==scale),]
-	nfinale=nscale[,4:24]
-#	for (i in seq(1:20))
-	i=17 ##at the moment we use corr=0.8
-	{	
+	d=data[which(data$V2==RRMid),]
+	scale=unique(d$V4)
+	runvar=runvar+1
+
+	RBPname=paste("data/proteinProfiles/",RBPid,"_",scale,".txt",sep="")
+	RBP=read.table(RBPname)
+	RRMname=""
+	RRMname=paste("data/domainProfiles/",RRMid,"_",scale,".txt",sep="")
+	RRM=read.table(RRMname)
 		
-		nval=nfinale[,i]
-		pval=pfinale[,i]
-		amount=length(nval[which(pval>nval)])
-		value=amount/nrow(nfinale)
-		out=paste(i,amount,scale,motif,value,sep=" ")
-		write(out,"./outputs/testfilefinal",append=T)
-
+	filename=paste("outputs/",RRMid,"_",scale,".jpeg",sep="")
+	print(filename)
+	jpeg(filename,   width = 1000, height = 400)
+	#	jpeg(filename)
+	protx=seq(1,nrow(RBP))
+	print(nrow(RBP))
+	plot(protx,RBP$V1,type="l",xlab="amino acid",ylab="property range")
+	#plot(0,ylab="", xlab="amino acid",yaxt="n",xaxt="n",xlim=c(0,protLen),col="white",type="l",lwd = 2,ylim=c(0,length(allRRM)*0.1), frame.plot=FALSE)
+	for (i in seq(d$V5,d$V6))
+	{
+		domainx=seq(i,i+nrow(RRM)-1)
+		lines(domainx,RRM$V1,col=runvar)
 	}
-#	tr=read.table("testfilefinal")
-#	final=tr[which(tr$V5==max(tr$V5)),]
-	#corr=1/10*final$V1
-#	value=final$V2/nrow(nfinale)
-#	end=paste(motif,scale,value,sep=" ")
-#	write(end,file="RBProfile.final",append=T)
+		
+	
+
+	dev.off()
+	
 }
-
-tr=read.table("./outputs/testfilefinal")
-oo=tr[which(tr$V5==max(tr$V5)),]
-end=paste(as.character(oo$V4),oo$V3,oo$V5,sep=" ")
-write(end,file="./outputs/RBProfile.final",append=T)
-
-

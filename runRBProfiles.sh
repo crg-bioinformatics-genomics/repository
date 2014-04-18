@@ -10,6 +10,6 @@ cd   tmp/$1
 
 	cp "$4" data/inseq.fasta
 
-	python RBPprofiler.py 2&>log
+	python RBPprofilerBeta.py 2&>log
 
 cd ..
