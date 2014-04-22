@@ -43,14 +43,14 @@ def cleverMachine_petr(test_sequence,property_table,AAs):
     return result_smoothed,prob_resultsnorm
 
 
-def create_dic_fromFastaSingle(inputfilename):
-    infile=open(inputfilename,"r")
-    name=""
-    string=""
-    dic={}
-    for line in infile:	
-    	dic[line.split()[0]]=line.split()[1]
-    return dic
+#def create_dic_fromFastaSingle(inputfilename):
+#    infile=open(inputfilename,"r")
+#    name=""
+#    string=""
+#    dic={}
+#    for line in infile:	
+#    	dic[line.split()[0]]=line.split()[1]
+#    return dic
 
 def create_dic_fromFasta(inputfilename):
     infile=open(inputfilename,"r")
@@ -275,11 +275,11 @@ for RBP in posRBP:
 		pfamRNA[line.split()[4]]=line.split()[5] #model=pfamID
 	#print pfam	
 
-	o=open("data/input_sequence.fasta","w")
+	o=open("data/hmmer.fasta","w")
 	o.write(">"+str(RBP)+"\n")
 	o.write(posRBP[RBP]+"\n")
 	o.close()
-	subprocess.call("hmmscan --cut_ga --noali --domtblout outputs/fragmentation.log /mnt/large/databases/Pfam_hmm/Pfam-A.hmm data/input_sequence.fasta > outputs/hmm_log.txt",shell=True)
+	subprocess.call("hmmscan --cut_ga --noali --domtblout outputs/fragmentation.log /mnt/large/databases/Pfam_hmm/Pfam-A.hmm data/hmmer.fasta > outputs/hmm_log.txt",shell=True)
 	infile=open("outputs/fragmentation.log","r")
 	
 	RRMfound=0
