@@ -20,19 +20,28 @@ def copyfolder(src, dst):
         if exc.errno == errno.ENOTDIR:
             shutil.copy(src, dst)
         else: raise
-        
-# read the task definition yaml file
-with open(os.path.join(SCRIPT_PATH, "signature.yaml"), "r") as task_f:
-	task_definition = yaml.load(task_f)
+
+if sys.argv[1] == "-text=Yes":
+	# read the task definition yaml file
+	with open(os.path.join(SCRIPT_PATH, "signature.yaml"), "r") as task_f:
+    	task_definition = yaml.load(task_f)
+	input_mode = "text"
+else:
+    with open(os.path.join(SCRIPT_PATH, "signature_file.yaml"), "r") as task_f:
+		task_definition = yaml.load(task_f)
+    input_mode = "file"
 
 parser = argparse.ArgumentParser(
    description='Launches catRAPID signature with properly parset parameters')
 
 # parser.add_argument(
 #    '-fileA', type=str, default=["none"], nargs=1, help='Dataset A')
-# 
+#
 # parser.add_argument(
 #    '-fileB', type=str, default=["none"], nargs=1, help='Dataset B')
+if input_mode == "file":
+    parser.add_argument(
+	   '-fileA', type=str, default=["none"], nargs=1, help='Fasta sequence')
 
 parser.add_argument(
    '-output_dir', type=str, nargs=1,
@@ -58,22 +67,31 @@ import re
 import StringIO
 from Bio import SeqIO
 
-Ppat = re.compile('>.*?\n[ARNDCQEGHILKMFPSTWYV]+', re.IGNORECASE)
 
-if Ppat.match(args.FORMprotein_seq[0]) == None:
-	args.FORMprotein_seq[0] = ">input_protein\n"+args.FORMprotein_seq[0]
+if input_mode == "text":
+    Ppat = re.compile('>.*?\n[ARNDCQEGHILKMFPSTWYV]+', re.IGNORECASE)
+    if Ppat.match(args.FORMprotein_seq[0]) == None:
+    	args.FORMprotein_seq[0] = ">input_protein\n"+args.FORMprotein_seq[0]
+    protSeq = []
+    protFile = os.path.join(OUTPUT_PATH,"protein.fasta")
+    output_handle = open(protFile, "w")
+    for record in SeqIO.parse(StringIO.StringIO(args.FORMprotein_seq[0]), "fasta"):
+    	protSeq.append(record)
+    	output_handle.write(str(">input_protein\n"+record.seq))
+    # SeqIO.write(protSeq, output_handle, "fasta")
+    output_handle.close()
 
-protSeq = []
-protFile = os.path.join(OUTPUT_PATH,"protein.fasta")
-output_handle = open(protFile, "w")
-for record in SeqIO.parse(StringIO.StringIO(args.FORMprotein_seq[0]), "fasta"):
-	print record
-	protSeq.append(record)
-	#output_handle.write(str(">input_protein\n"+record.seq))
-	#output_handle.write(str(">"+record.id+" "+record.name+"\n"+record.seq+"\n"))
-	output_handle.write(str(">"+record.id+"\n"+record.seq+"\n"))
-# SeqIO.write(protSeq, output_handle, "fasta")
-output_handle.close()
+else:
+    protSeq = []
+    protFile = os.path.join(OUTPUT_PATH.replace("output/", ""),"protein.fasta")
+    input_handle = open(args.fileA[0], "rU")
+    for record in SeqIO.parse(input_handle, "fasta"):
+        record.id=record.id.replace(" ","").replace("\t","")+record.description.replace(" ","").replace("\t","")
+        record.description=""
+        protSeq.append(record)
+    output_handle = open(protFile, "w")
+    SeqIO.write(protSeq, output_handle, "fasta")
+    output_handle.close()
 
 #import IPython
 #IPython.embed()
@@ -107,26 +125,26 @@ if p.returncode == 0:
 		shutil.copyfile(TMP_PATH+file, OUTPUT_PATH+file)
 	if os.path.exists(OUTPUT_PATH+"images") == False :
 		copyfolder(SCRIPT_PATH+"/images", OUTPUT_PATH+"images")
-	
+
 	from django.template import Template
 	from django.template import Context
 	from django.conf import settings
 	from django.template import Template
-	
+
 	settings.configure(TEMPLATE_DIRS=(os.path.join(SCRIPT_PATH,'./')), DEBUG=True, TEMPLATE_DEBUG=True)
-	
+
 	import datetime
-	
+
 	#with open(os.path.join(OUTPUT_PATH,"noPass.txt"), "r") as rbpout:
 #		rbp_lines = rbpout.readlines()
 #		rbp_pfam  = rbp_lines[0].split()[0]
 	#
 	## read the template file into a variable
-	
+
 	try:
 		#if jpeg is available
 		test= open(os.path.join(OUTPUT_PATH,"plot.jpeg"), "r")
-		#pylog.write("binding domains detected... ")		
+		#pylog.write("binding domains detected... ")
 		with open(os.path.join(OUTPUT_PATH,"prediction.txt"), "r") as rbpout:
 			rbp_lines = rbpout.readlines()
 
@@ -139,7 +157,7 @@ if p.returncode == 0:
 
 		with open(os.path.join(OUTPUT_PATH,"HMMER.results"), "r") as hmmercheck:
 			hmmer_lines=hmmercheck.readlines()
-			
+
 
 		if (float(PredictionScore)<0.5) and (descr=="onlyHMMER\n"):
 			with open(os.path.join(SCRIPT_PATH, "indexonlyHMMERdetected.html"), "r") as template_file:
@@ -159,7 +177,7 @@ if p.returncode == 0:
 
 
 
-	
+
 	except:
 
 		##check if multiple submission is given
@@ -183,19 +201,19 @@ if p.returncode == 0:
 				#rbp_pfam  = rbp_lines[0].split()[0]
 				PredictionScore=rbp_lines[1].split()[1]
 				descr=rbp_lines[0][1:-1]
-	
+
 			c = Context({"title": title,"proteinFile" : protFile, "PredictionScore" : PredictionScore,"randoms" : random_number,"Description": descr, "generated" : str(datetime.datetime.now()),})
-		
+
 		#c = Context({"title": title,"proteinFile" : protFile,"randoms" : random_number,"generated" : str(datetime.datetime.now()),})
 
 
 
 	t = Template(template_string)
 #	import datetime
-	
+
 	# create template from the string
-	
-	
+
+
 	# context contains variables to be replaced
 	#c = Context(
 	 #  {
@@ -207,9 +225,9 @@ if p.returncode == 0:
 	#	   "generated" : str(datetime.datetime.now()),
 	 #  }
 	#)
-	
+
 	# and this bit outputs it all into index.html
-	with open(os.path.join(OUTPUT_PATH, "index.html"), "w") as output: 
+	with open(os.path.join(OUTPUT_PATH, "index.html"), "w") as output:
 	   output.write(t.render(c))
 
 else:
