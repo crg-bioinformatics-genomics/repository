@@ -25,10 +25,10 @@ if sys.argv[1] == "-text=Yes":
 	# read the task definition yaml file
     with open(os.path.join(SCRIPT_PATH, "signature.yaml"), "r") as task_f:
         task_definition = yaml.load(task_f)
-	input_mode = "text"
+    input_mode = "text"
 else:
     with open(os.path.join(SCRIPT_PATH, "signature_file.yaml"), "r") as task_f:
-		task_definition = yaml.load(task_f)
+        task_definition = yaml.load(task_f)
     input_mode = "file"
 
 parser = argparse.ArgumentParser(
@@ -40,8 +40,7 @@ parser = argparse.ArgumentParser(
 # parser.add_argument(
 #    '-fileB', type=str, default=["none"], nargs=1, help='Dataset B')
 if input_mode == "file":
-    parser.add_argument(
-	   '-fileA', type=str, default=["none"], nargs=1, help='Fasta sequence')
+    parser.add_argument('-fileA', type=str, default=["none"], nargs=1, help='Fasta sequence')
 
 parser.add_argument(
    '-output_dir', type=str, nargs=1,
