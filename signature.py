@@ -23,8 +23,8 @@ def copyfolder(src, dst):
 
 if sys.argv[1] == "-text=Yes":
 	# read the task definition yaml file
-	with open(os.path.join(SCRIPT_PATH, "signature.yaml"), "r") as task_f:
-    	task_definition = yaml.load(task_f)
+    with open(os.path.join(SCRIPT_PATH, "signature.yaml"), "r") as task_f:
+        task_definition = yaml.load(task_f)
 	input_mode = "text"
 else:
     with open(os.path.join(SCRIPT_PATH, "signature_file.yaml"), "r") as task_f:
