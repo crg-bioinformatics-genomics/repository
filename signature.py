@@ -39,6 +39,10 @@ parser = argparse.ArgumentParser(
 #
 # parser.add_argument(
 #    '-fileB', type=str, default=["none"], nargs=1, help='Dataset B')
+
+parser.add_argument(
+    '-text', type=str, nargs="?", help='Just to enable text mode')
+
 if input_mode == "file":
     parser.add_argument('-fileA', type=str, default=["none"], nargs=1, help='Fasta sequence')
 
@@ -46,8 +50,6 @@ if input_mode == "file":
 parser.add_argument(
    '-output_dir', type=str, nargs=1,
    help='Directory where the output is going to be stored')
-parser.add_argument(
-    '-text', type=str, nargs="?", help='Just to enable text mode')
 
 # accept form fields
 for item in task_definition['form_fields']:
